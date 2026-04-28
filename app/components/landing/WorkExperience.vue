@@ -12,7 +12,7 @@ defineProps<{
     :title="page.experience.title"
     :description="page.experience.description"
     :ui="{
-      container: 'py-10 sm:py-14 gap-6 sm:gap-8',
+      container: 'py-12 sm:py-16 gap-8 sm:gap-10',
       title: 'text-left text-xl sm:text-2xl font-medium',
       description: 'text-left mt-2 text-sm sm:text-base text-muted'
     }"
@@ -26,7 +26,7 @@ defineProps<{
         :transition="{ delay: 0.1 * index }"
         :in-view-options="{ once: true }"
       >
-        <article class="rounded-lg border border-default bg-elevated/40 p-5 transition-colors hover:border-primary/40 hover:bg-elevated/70">
+        <article class="rounded-xl border border-default bg-elevated/40 p-5 transition-colors duration-200 hover:border-primary/40 hover:bg-elevated/70">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div class="flex gap-3">
               <div class="flex size-10 shrink-0 items-center justify-center rounded-lg border border-default bg-default">

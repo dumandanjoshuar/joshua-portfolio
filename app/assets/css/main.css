@@ -23,10 +23,20 @@ html {
 
 body {
   text-rendering: optimizeLegibility;
+  background-color: var(--ui-bg);
 }
 
 [id] {
   scroll-margin-top: 5.5rem;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .dark {

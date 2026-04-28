@@ -37,10 +37,10 @@ const hasPlaceholderContact = computed(() => {
   <UPageSection
     id="contact"
     :ui="{
-      container: 'py-10 sm:py-14'
+      container: 'py-12 sm:py-16'
     }"
   >
-    <div class="rounded-lg border border-default bg-elevated/50 p-6 sm:p-8">
+    <div class="rounded-xl border border-default bg-elevated/50 p-6 sm:p-8">
       <div class="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
         <div>
           <h2 class="text-xl font-medium text-highlighted sm:text-2xl">
@@ -64,6 +64,7 @@ const hasPlaceholderContact = computed(() => {
             v-bind="link"
             color="neutral"
             variant="outline"
+            class="rounded-full"
           />
           <UButton
             :to="global.resumeUrl"
@@ -72,6 +73,7 @@ const hasPlaceholderContact = computed(() => {
             color="primary"
             icon="i-lucide-download"
             label="Resume"
+            class="rounded-full"
           />
         </div>
       </div>

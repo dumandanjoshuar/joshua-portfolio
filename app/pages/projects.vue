@@ -69,13 +69,13 @@ useSeoMeta({
         :transition="{ delay: 0.2 * index }"
         :in-view-options="{ once: true }"
       >
-        <article class="grid overflow-hidden rounded-lg border border-default bg-elevated/40 transition-colors hover:border-primary/40 hover:bg-elevated/70 lg:grid-cols-[280px_1fr]">
+        <article class="group grid overflow-hidden rounded-xl border border-default bg-elevated/40 transition-colors duration-200 hover:border-primary/40 hover:bg-elevated/70 lg:grid-cols-[280px_1fr]">
           <img
             :src="project.image.src"
             :alt="project.image.alt"
             width="560"
             height="420"
-            class="h-56 w-full object-cover lg:h-full"
+            class="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] lg:h-full"
             loading="lazy"
           >
 
@@ -115,7 +115,7 @@ useSeoMeta({
                 variant="ghost"
                 trailing-icon="i-lucide-arrow-up-right"
                 label="Open"
-                class="w-fit"
+                class="w-fit rounded-full"
               />
             </div>
 

@@ -7,14 +7,15 @@ defineProps<{
 </script>
 
 <template>
-  <div class="fixed top-2 sm:top-4 mx-auto left-1/2 z-10 max-w-[calc(100vw-1rem)] -translate-x-1/2 transform">
+  <div class="fixed left-1/2 top-2 z-20 w-[calc(100vw-1rem)] max-w-[calc(100vw-1rem)] -translate-x-1/2 transform sm:top-4 sm:w-auto">
     <UNavigationMenu
       :items="links"
       variant="link"
       color="neutral"
-      class="overflow-x-auto rounded-full border border-muted/50 bg-muted/80 px-2 shadow-lg shadow-neutral-950/5 backdrop-blur-sm sm:px-4"
+      class="no-scrollbar overflow-x-auto rounded-full border border-default/70 bg-default/85 px-1.5 py-1.5 shadow-lg shadow-neutral-950/5 backdrop-blur sm:px-3"
       :ui="{
-        link: 'px-2 py-1 text-sm',
+        root: 'min-w-max gap-1',
+        link: 'rounded-full px-3 py-2 text-sm whitespace-nowrap transition-colors',
         linkLeadingIcon: 'hidden'
       }"
     >

@@ -1,9 +1,9 @@
 export default defineAppConfig({
   global: {
     name: 'Joshua Dumandan',
-    email: 'your-email@example.com',
-    linkedin: 'https://www.linkedin.com/in/your-linkedin',
-    github: 'https://github.com/your-github',
+    email: 'dumandan.joshua.r@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/joshua-dumandan-32888a283/',
+    github: 'https://github.com/dumandanjoshuar',
     resumeUrl: '/resume/joshua-dumandan-resume.html'
   },
   ui: {
@@ -24,17 +24,17 @@ export default defineAppConfig({
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-linkedin',
-      'to': 'https://www.linkedin.com/in/your-linkedin',
+      'to': 'https://www.linkedin.com/in/joshua-dumandan-32888a283/',
       'target': '_blank',
       'aria-label': 'Joshua Dumandan on LinkedIn'
     }, {
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/your-github',
+      'to': 'https://github.com/dumandanjoshuar',
       'target': '_blank',
       'aria-label': 'Joshua Dumandan on GitHub'
     }, {
       'icon': 'i-lucide-mail',
-      'to': 'mailto:your-email@example.com',
+      'to': 'mailto:dumandan.joshua.r@gmail.com',
       'target': '_self',
       'aria-label': 'Email Joshua Dumandan'
     }]

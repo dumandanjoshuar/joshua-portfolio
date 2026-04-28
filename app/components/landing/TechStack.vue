@@ -12,7 +12,7 @@ defineProps<{
     :title="page.skills.title"
     :description="page.skills.description"
     :ui="{
-      container: 'py-10 sm:py-14 gap-6 sm:gap-8',
+      container: 'py-12 sm:py-16 gap-8 sm:gap-10',
       title: 'text-left text-xl sm:text-2xl font-medium',
       description: 'text-left mt-2 text-sm sm:text-base text-muted'
     }"
@@ -21,7 +21,7 @@ defineProps<{
       <article
         v-for="group in page.skills.groups"
         :key="group.title"
-        class="rounded-lg border border-default bg-elevated/40 p-5 transition-colors hover:border-primary/40 hover:bg-elevated/70"
+        class="rounded-xl border border-default bg-elevated/40 p-5 transition-colors duration-200 hover:border-primary/40 hover:bg-elevated/70"
       >
         <div class="flex items-start gap-3">
           <div class="flex size-10 shrink-0 items-center justify-center rounded-lg border border-default bg-default">

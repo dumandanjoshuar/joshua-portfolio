@@ -1,13 +1,13 @@
 seo:
   title: "Joshua Dumandan - Full-stack Web Developer"
-  description: "Portfolio of Joshua Dumandan, a full-stack web developer in the Philippines building Laravel, Vue, API, and AI-assisted coding workflows."
+  description: "Portfolio of Joshua Dumandan, a full-stack web developer in the Philippines building Laravel, Vue, API integrations, and practical business systems."
 title: "Joshua Dumandan"
 description: "Full-stack Web Developer based in the Philippines. I build practical web systems with Laravel, Vue, MySQL, and modern frontend tooling."
 hero:
   eyebrow: "Full-stack Web Developer"
   image:
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
-    alt: "Developer workspace with code on a laptop"
+    src: "/placeholders/hero-workspace.svg"
+    alt: "Illustrated developer workspace placeholder"
   links:
     - label: "View Projects"
       to: "/projects"
@@ -23,16 +23,16 @@ hero:
       target: "_blank"
       download: true
     - label: "Contact Me"
-      to: "#contact"
+      to: "/contact"
       icon: "i-lucide-mail"
       color: "neutral"
       variant: "outline"
       size: "lg"
   highlights:
     - "Laravel 11 and PHP 8.2"
-    - "Vue 3, Vite, Pinia/Vuex"
+    - "Vue 3, Vite, JavaScript"
     - "REST APIs and MySQL"
-    - "AI-assisted development workflows"
+    - "Modern developer tooling"
 about:
   title: "About"
   description: |
@@ -42,10 +42,10 @@ about:
   points:
     - "I am comfortable moving between frontend and backend work when a feature needs both sides."
     - "I like clear UI, readable code, and small decisions that make systems easier to maintain."
-    - "I use AI coding tools as a practical assistant while still reviewing, testing, and understanding the code I ship."
+    - "I use modern tooling to move faster while still reviewing, testing, and understanding the code I ship."
 skills:
   title: "Skills"
-  description: "The tools I have used in real project work, grouped by where they usually fit in the stack."
+  description: "The tools I work with most in current projects, plus a few foundations from earlier training."
   groups:
     - title: "Frontend"
       description: "Interfaces, state, routing, and component work."
@@ -54,11 +54,8 @@ skills:
         - "Vue.js 3"
         - "Vite"
         - "JavaScript"
-        - "Pinia"
-        - "Vuex"
         - "Vue Router"
         - "Vuetify"
-        - "PrimeVue"
     - title: "Backend"
       description: "Application logic, APIs, auth, queues, and testing."
       icon: "i-lucide-server"
@@ -66,19 +63,11 @@ skills:
         - "Laravel 11"
         - "PHP 8.2"
         - "REST APIs"
-        - "Laravel Sanctum"
-        - "Laravel Horizon"
-        - "Laravel Telescope"
-        - "PHPUnit"
-        - "Laravel Pint"
     - title: "Data and Infrastructure"
       description: "Persistence, caching, monitoring, and delivery basics."
       icon: "i-lucide-database"
       items:
         - "MySQL"
-        - "Redis"
-        - "Sentry"
-        - "Firebase"
         - "Git"
         - "pnpm"
         - "Composer"
@@ -92,13 +81,17 @@ skills:
         - "Ably"
         - "Laravel Echo"
         - "Swagger / OpenAPI"
-        - "DOMPDF"
-        - "Snappy PDF"
-        - "Spatie packages"
         - "Klaviyo"
-        - "Telegram notifications"
         - "Google services"
         - "Mapbox"
+    - title: "Foundations from Bootcamp"
+      description: "Training experience from building a full-stack ecommerce project with the MERN stack."
+      icon: "i-lucide-graduation-cap"
+      items:
+        - "MongoDB"
+        - "Express.js"
+        - "React"
+        - "Node.js"
 experience:
   title: "Experience"
   description: "A practical path from operations work into building and maintaining business software."
@@ -111,7 +104,7 @@ experience:
       points:
         - "Implement frontend screens and backend changes for business features."
         - "Integrate APIs, update database behavior, and fix issues found during QA."
-        - "Work across tools such as Sanctum, Horizon, Telescope, Redis, Sentry, and OpenAPI documentation."
+        - "Work with internal workflows, API documentation, and day-to-day product fixes needed for release."
     - role: "Insurance Operations"
       company: "Previous role"
       date: "Before software development"
@@ -125,5 +118,5 @@ projects:
   description: "A mix of private work, client-style implementation, and an upcoming public showcase. Private work is described without confidential details."
 contact:
   title: "Contact"
-  description: "If you are hiring for frontend, full-stack, junior-to-mid developer, or AI-assisted coding roles, I would be happy to talk."
+  description: "If you are hiring for frontend, full-stack, or junior-to-mid developer roles, I would be happy to talk."
   note: "Replace the placeholder contact links before publishing."

@@ -15,11 +15,11 @@ defineProps<{
     :description="page.description"
     :links="page.hero.links"
     :ui="{
-      container: 'py-18 sm:py-24 lg:py-28 lg:grid lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-12',
+      container: 'py-20 sm:py-24 lg:py-28 lg:grid lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-14',
       wrapper: 'text-left',
       headline: 'justify-start',
       title: 'mx-0 max-w-2xl text-left',
-      description: 'mx-0 max-w-2xl text-left',
+      description: 'mx-0 mt-4 max-w-2xl text-left text-base leading-7',
       links: 'justify-start gap-2 flex-wrap'
     }"
   >
@@ -45,12 +45,12 @@ defineProps<{
         :initial="{ opacity: 0, transform: 'translateY(8px)' }"
         :animate="{ opacity: 1, transform: 'translateY(0)' }"
         :transition="{ duration: 0.45, delay: 0.2 }"
-        class="flex flex-wrap items-center gap-2"
+        class="mt-6 flex flex-wrap items-center gap-3"
       >
         <UButton
           v-for="link in page.hero.links"
           :key="link.label"
-          v-bind="link"
+          v-bind="{ ...link, class: 'rounded-full' }"
         />
       </Motion>
 
@@ -59,12 +59,12 @@ defineProps<{
         :initial="{ opacity: 0, transform: 'translateY(8px)' }"
         :animate="{ opacity: 1, transform: 'translateY(0)' }"
         :transition="{ duration: 0.45, delay: 0.3 }"
-        class="mt-4 flex items-center gap-1"
+        class="mt-4 flex flex-wrap items-center gap-1.5"
       >
         <UButton
           v-for="(link, index) in footer.links"
           :key="index"
-          v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
+          v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', class: 'rounded-full', ...link }"
         />
       </Motion>
     </template>
@@ -75,16 +75,7 @@ defineProps<{
       :transition="{ duration: 0.55, delay: 0.15 }"
       class="w-full"
     >
-      <div class="relative mx-auto max-w-md overflow-hidden rounded-lg border border-default bg-elevated/60 shadow-lg shadow-neutral-950/5 backdrop-blur">
-        <img
-          :src="page.hero.image.src"
-          :alt="page.hero.image.alt"
-          width="640"
-          height="480"
-          class="aspect-[4/3] w-full object-cover"
-          loading="eager"
-        >
-
+      <div class="relative mx-auto max-w-md overflow-hidden rounded-xl border border-default bg-elevated/60 shadow-lg shadow-neutral-950/5 backdrop-blur">
         <div class="flex items-center justify-between border-b border-default px-4 py-3">
           <div class="flex items-center gap-2">
             <span class="size-2.5 rounded-full bg-error" />
@@ -93,6 +84,15 @@ defineProps<{
           </div>
           <span class="text-xs text-muted">portfolio.vue</span>
         </div>
+
+        <img
+          :src="page.hero.image.src"
+          :alt="page.hero.image.alt"
+          width="640"
+          height="480"
+          class="aspect-[4/3] w-full border-b border-default object-cover"
+          loading="eager"
+        >
 
         <div class="space-y-3 p-4 text-sm">
           <div class="flex items-center gap-3 rounded-md bg-default/70 px-3 py-2">
@@ -117,7 +117,7 @@ defineProps<{
               class="size-4 text-primary"
             />
             <span class="text-muted">workflow</span>
-            <span class="ml-auto text-highlighted">AI-assisted</span>
+            <span class="ml-auto text-highlighted">modern tooling</span>
           </div>
         </div>
 

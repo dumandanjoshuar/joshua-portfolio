@@ -20,7 +20,7 @@ const projectUrl = (url?: string) => {
     :title="page.projects.title"
     :description="page.projects.description"
     :ui="{
-      container: 'py-10 sm:py-14 gap-6 sm:gap-8',
+      container: 'py-12 sm:py-16 gap-8 sm:gap-10',
       title: 'text-left text-xl sm:text-2xl font-medium',
       description: 'text-left mt-2 text-sm sm:text-base text-muted'
     }"
@@ -34,13 +34,13 @@ const projectUrl = (url?: string) => {
         :transition="{ delay: 0.1 * index }"
         :in-view-options="{ once: true }"
       >
-        <article class="grid overflow-hidden rounded-lg border border-default bg-elevated/40 transition-colors hover:border-primary/40 hover:bg-elevated/70 md:grid-cols-[220px_1fr]">
+        <article class="group grid overflow-hidden rounded-xl border border-default bg-elevated/40 transition-colors duration-200 hover:border-primary/40 hover:bg-elevated/70 md:grid-cols-[220px_1fr]">
           <img
             :src="project.image.src"
             :alt="project.image.alt"
             width="440"
             height="320"
-            class="h-48 w-full object-cover md:h-full"
+            class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] md:h-full"
             loading="lazy"
           >
 
@@ -80,7 +80,7 @@ const projectUrl = (url?: string) => {
                 variant="ghost"
                 trailing-icon="i-lucide-arrow-up-right"
                 label="Open"
-                class="w-fit"
+                class="w-fit rounded-full"
               />
             </div>
 
@@ -121,6 +121,7 @@ const projectUrl = (url?: string) => {
         variant="outline"
         trailing-icon="i-lucide-arrow-right"
         label="View Projects Page"
+        class="rounded-full"
       />
     </div>
   </UPageSection>

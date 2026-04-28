@@ -11,7 +11,7 @@ defineProps<{
     id="about"
     :title="page.about.title"
     :ui="{
-      container: 'py-10 sm:py-14 gap-6 sm:gap-8',
+      container: 'py-12 sm:py-16 gap-8 sm:gap-10',
       title: 'text-left text-xl sm:text-2xl font-medium'
     }"
   >
@@ -26,7 +26,7 @@ defineProps<{
         <div
           v-for="point in page.about.points"
           :key="point"
-          class="flex gap-3 rounded-lg border border-default bg-elevated/40 p-4 transition-colors hover:border-primary/40 hover:bg-elevated/70"
+          class="flex gap-3 rounded-xl border border-default bg-elevated/40 p-4 transition-colors duration-200 hover:border-primary/40 hover:bg-elevated/70"
         >
           <UIcon
             name="i-lucide-check"
