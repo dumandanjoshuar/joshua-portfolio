@@ -1,0 +1,20 @@
+title: "Upcoming Showcase App"
+description: "A planned public app for demonstrating production-style Laravel and Vue work. This is intentionally marked as upcoming until there is a real demo or repository to share."
+status: "Upcoming"
+role: "Personal showcase"
+icon: "i-lucide-rocket"
+image:
+  src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+  alt: "Laptop with code editor open"
+url: ""
+tags:
+  - "Laravel 11"
+  - "Vue.js 3"
+  - "Pinia"
+  - "MySQL"
+  - "OpenAI API"
+highlights:
+  - "Planned as a public code sample for auth, CRUD workflows, API design, and UI polish."
+  - "A place to show AI-assisted development patterns without mixing in private work."
+  - "Will include a real demo or GitHub link once the implementation is ready."
+date: "Upcoming"

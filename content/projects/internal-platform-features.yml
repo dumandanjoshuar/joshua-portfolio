@@ -1,0 +1,21 @@
+title: "Internal Platform Features"
+description: "Private case-study work from an internal staging platform built with Vue.js, Laravel, PHP, and MySQL. The work is described at a high level to avoid sharing confidential product details."
+status: "Private case study"
+role: "Full-stack feature work"
+icon: "i-lucide-layout-dashboard"
+image:
+  src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+  alt: "Analytics dashboard on a laptop screen"
+url: ""
+tags:
+  - "Vue.js 3"
+  - "Laravel"
+  - "PHP"
+  - "MySQL"
+  - "REST APIs"
+  - "QA coordination"
+highlights:
+  - "Built and adjusted frontend screens for internal workflows."
+  - "Implemented backend changes, API behavior, and database updates."
+  - "Fixed bugs from QA reports and helped move issues toward release."
+date: "Current work"

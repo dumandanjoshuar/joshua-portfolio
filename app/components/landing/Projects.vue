@@ -1,86 +1,51 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('projects-page', () => {
-  return queryCollection('pages').path('/projects').first()
-})
-if (!page.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page not found',
-    fatal: true
-  })
-}
+import type { IndexCollectionItem } from '@nuxt/content'
 
-const { data: projects } = await useAsyncData('projects', () => {
+defineProps<{
+  page: IndexCollectionItem
+}>()
+
+const { data: projects } = await useAsyncData('landing-projects', () => {
   return queryCollection('projects').all()
 })
-
-const { global } = useAppConfig()
 
 const projectUrl = (url?: string) => {
   return url && url !== '#' ? url : undefined
 }
-
-useSeoMeta({
-  title: page.value?.seo?.title || page.value?.title,
-  ogTitle: page.value?.seo?.title || page.value?.title,
-  description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
-})
 </script>
 
 <template>
-  <UPage v-if="page">
-    <UPageHero
-      :title="page.title"
-      :description="page.description"
-      :links="page.links"
-      :ui="{
-        container: 'py-14 sm:py-18 lg:py-20',
-        title: 'mx-0! text-left',
-        description: 'mx-0! text-left',
-        links: 'justify-start'
-      }"
-    >
-      <template #links>
-        <div
-          v-if="page.links"
-          class="flex flex-wrap items-center gap-2"
-        >
-          <UButton
-            v-bind="page.links[0]"
-          />
-          <UButton
-            :to="`mailto:${global.email}`"
-            v-bind="page.links[1]"
-          />
-        </div>
-      </template>
-    </UPageHero>
-    <UPageSection
-      :ui="{
-        container: 'pt-0! pb-14'
-      }"
-    >
+  <UPageSection
+    id="projects"
+    :title="page.projects.title"
+    :description="page.projects.description"
+    :ui="{
+      container: 'py-10 sm:py-14 gap-6 sm:gap-8',
+      title: 'text-left text-xl sm:text-2xl font-medium',
+      description: 'text-left mt-2 text-sm sm:text-base text-muted'
+    }"
+  >
+    <div class="grid gap-4">
       <Motion
         v-for="(project, index) in projects"
         :key="project.title"
         :initial="{ opacity: 0, transform: 'translateY(10px)' }"
         :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-        :transition="{ delay: 0.2 * index }"
+        :transition="{ delay: 0.1 * index }"
         :in-view-options="{ once: true }"
       >
-        <article class="grid overflow-hidden rounded-lg border border-default bg-elevated/40 transition-colors hover:border-primary/40 hover:bg-elevated/70 lg:grid-cols-[280px_1fr]">
+        <article class="grid overflow-hidden rounded-lg border border-default bg-elevated/40 transition-colors hover:border-primary/40 hover:bg-elevated/70 md:grid-cols-[220px_1fr]">
           <img
             :src="project.image.src"
             :alt="project.image.alt"
-            width="560"
-            height="420"
-            class="h-56 w-full object-cover lg:h-full"
+            width="440"
+            height="320"
+            class="h-48 w-full object-cover md:h-full"
             loading="lazy"
           >
 
           <div class="p-5">
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
               <div class="flex gap-3">
                 <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-default bg-default">
                   <UIcon
@@ -90,9 +55,9 @@ useSeoMeta({
                 </div>
                 <div>
                   <div class="flex flex-wrap items-center gap-2">
-                    <h2 class="font-medium text-highlighted">
+                    <h3 class="font-medium text-highlighted">
                       {{ project.title }}
-                    </h2>
+                    </h3>
                     <UBadge
                       color="neutral"
                       variant="outline"
@@ -147,6 +112,16 @@ useSeoMeta({
           </div>
         </article>
       </Motion>
-    </UPageSection>
-  </UPage>
+    </div>
+
+    <div class="mt-6">
+      <UButton
+        to="/projects"
+        color="neutral"
+        variant="outline"
+        trailing-icon="i-lucide-arrow-right"
+        label="View Projects Page"
+      />
+    </div>
+  </UPageSection>
 </template>

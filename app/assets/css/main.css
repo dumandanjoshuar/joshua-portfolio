@@ -17,6 +17,18 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 .dark {
   ::selection {
     color: #ffffff;

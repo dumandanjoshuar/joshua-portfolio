@@ -1,6 +1,18 @@
-title: Designing Interfaces, Building Experiences.
-description: I've worked on a variety of projects, focusing on creating intuitive digital experiences where thoughtful design meets clean code. Here are some highlights I'm proud of, showcasing my process from concept to execution.
+seo:
+  title: "Projects - Joshua Dumandan"
+  description: "Selected projects and case studies by Joshua Dumandan, including private Laravel and Vue platform work, a Shopify photo studio website, and an upcoming public showcase app."
+title: "Projects and Case Studies"
+description: "Selected work that reflects how I build real systems: private platform features, a Shopify website, and an upcoming public showcase app."
 links:
-  - label: "Let's talk"
+  - label: "Download Resume"
+    to: "/resume/joshua-dumandan-resume.html"
+    icon: "i-lucide-download"
+    color: "primary"
+    size: "md"
+    target: "_blank"
+    download: true
+  - label: "Email Me"
+    icon: "i-lucide-mail"
     color: "neutral"
-  - label: 'Email me'
+    variant: "outline"
+    size: "md"

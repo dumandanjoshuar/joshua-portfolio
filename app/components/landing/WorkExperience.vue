@@ -8,50 +8,70 @@ defineProps<{
 
 <template>
   <UPageSection
+    id="experience"
     :title="page.experience.title"
+    :description="page.experience.description"
     :ui="{
-      container: 'p-0! gap-4 sm:gap-4',
-      title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
-      description: 'mt-2'
+      container: 'py-10 sm:py-14 gap-6 sm:gap-8',
+      title: 'text-left text-xl sm:text-2xl font-medium',
+      description: 'text-left mt-2 text-sm sm:text-base text-muted'
     }"
   >
-    <template #description>
-      <div class="flex flex-col gap-2">
-        <Motion
-          v-for="(experience, index) in page.experience.items"
-          :key="index"
-          :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ delay: 0.4 + 0.2 * index }"
-          :in-view-options="{ once: true }"
-          class="text-muted flex items-center text-nowrap gap-2"
-        >
-          <p class="text-sm">
-            {{ experience.date }}
-          </p>
-          <USeparator />
-          <ULink
-            class="flex items-center gap-1"
-            :to="experience.company.url"
-            target="_blank"
-          >
-            <span class="text-sm">
-              {{ experience.position }}
-            </span>
-            <div
-              class="inline-flex items-center gap-1"
-              :style="{ color: experience.company.color }"
-            >
-              <span class="font-medium">{{ experience.company.name }}</span>
-              <UIcon :name="experience.company.logo" />
+    <div class="grid gap-4">
+      <Motion
+        v-for="(experience, index) in page.experience.items"
+        :key="experience.role"
+        :initial="{ opacity: 0, transform: 'translateY(10px)' }"
+        :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+        :transition="{ delay: 0.1 * index }"
+        :in-view-options="{ once: true }"
+      >
+        <article class="rounded-lg border border-default bg-elevated/40 p-5 transition-colors hover:border-primary/40 hover:bg-elevated/70">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div class="flex gap-3">
+              <div class="flex size-10 shrink-0 items-center justify-center rounded-lg border border-default bg-default">
+                <UIcon
+                  :name="experience.icon"
+                  class="size-5 text-primary"
+                />
+              </div>
+              <div>
+                <h3 class="font-medium text-highlighted">
+                  {{ experience.role }}
+                </h3>
+                <p class="text-sm text-muted">
+                  {{ experience.company }}
+                </p>
+              </div>
             </div>
-          </ULink>
-        </Motion>
-      </div>
-    </template>
+            <UBadge
+              color="neutral"
+              variant="subtle"
+              class="w-fit"
+            >
+              {{ experience.date }}
+            </UBadge>
+          </div>
+
+          <p class="mt-4 text-sm leading-6 text-muted">
+            {{ experience.summary }}
+          </p>
+
+          <ul class="mt-4 grid gap-2">
+            <li
+              v-for="point in experience.points"
+              :key="point"
+              class="flex gap-2 text-sm leading-6 text-muted"
+            >
+              <UIcon
+                name="i-lucide-dot"
+                class="mt-0.5 size-4 shrink-0 text-primary"
+              />
+              <span>{{ point }}</span>
+            </li>
+          </ul>
+        </article>
+      </Motion>
+    </div>
   </UPageSection>
 </template>
-
-<style scoped>
-
-</style>

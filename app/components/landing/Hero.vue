@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { IndexCollectionItem } from '@nuxt/content'
 
-const { footer, global } = useAppConfig()
+const { footer } = useAppConfig()
 
 defineProps<{
   page: IndexCollectionItem
@@ -10,182 +10,129 @@ defineProps<{
 
 <template>
   <UPageHero
+    orientation="horizontal"
+    :title="page.title"
+    :description="page.description"
+    :links="page.hero.links"
     :ui="{
-      headline: 'flex items-center justify-center',
-      title: 'text-shadow-md max-w-lg mx-auto',
-      links: 'mt-4 flex-col justify-center items-center'
+      container: 'py-18 sm:py-24 lg:py-28 lg:grid lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-12',
+      wrapper: 'text-left',
+      headline: 'justify-start',
+      title: 'mx-0 max-w-2xl text-left',
+      description: 'mx-0 max-w-2xl text-left',
+      links: 'justify-start gap-2 flex-wrap'
     }"
   >
     <template #headline>
       <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.1
-        }"
+        :initial="{ opacity: 0, transform: 'translateY(8px)' }"
+        :animate="{ opacity: 1, transform: 'translateY(0)' }"
+        :transition="{ duration: 0.45 }"
       >
-        <UColorModeAvatar
-          class="size-18 ring ring-default ring-offset-3 ring-offset-bg"
-          :light="global.picture?.light!"
-          :dark="global.picture?.dark!"
-          :alt="global.picture?.alt!"
-        />
-      </Motion>
-    </template>
-
-    <template #title>
-      <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.1
-        }"
-      >
-        {{ page.title }}
-      </Motion>
-    </template>
-
-    <template #description>
-      <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.3
-        }"
-      >
-        {{ page.description }}
+        <UBadge
+          color="neutral"
+          variant="subtle"
+          class="gap-2"
+        >
+          <span class="size-2 rounded-full bg-primary" />
+          {{ page.hero.eyebrow }}
+        </UBadge>
       </Motion>
     </template>
 
     <template #links>
       <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.5
-        }"
+        :initial="{ opacity: 0, transform: 'translateY(8px)' }"
+        :animate="{ opacity: 1, transform: 'translateY(0)' }"
+        :transition="{ duration: 0.45, delay: 0.2 }"
+        class="flex flex-wrap items-center gap-2"
       >
-        <div
-          v-if="page.hero.links"
-          class="flex items-center gap-2"
-        >
-          <UButton v-bind="page.hero.links[0]" />
-          <UButton
-            :color="global.available ? 'success' : 'error'"
-            variant="ghost"
-            class="gap-2"
-            :to="global.available ? global.meetingLink : ''"
-            :label="global.available ? 'Available for new projects' : 'Not available at the moment'"
-          >
-            <template #leading>
-              <span class="relative flex size-2">
-                <span
-                  class="absolute inline-flex size-full rounded-full opacity-75"
-                  :class="global.available ? 'bg-success animate-ping' : 'bg-error'"
-                />
-                <span
-                  class="relative inline-flex size-2 scale-90 rounded-full"
-                  :class="global.available ? 'bg-success' : 'bg-error'"
-                />
-              </span>
-            </template>
-          </UButton>
-        </div>
-      </Motion>
-
-      <div class="gap-x-4 inline-flex mt-4">
-        <Motion
-          v-for="(link, index) of footer?.links"
-          :key="index"
-
-          :initial="{
-            scale: 1.1,
-            opacity: 0,
-            filter: 'blur(20px)'
-          }"
-          :animate="{
-            scale: 1,
-            opacity: 1,
-            filter: 'blur(0px)'
-          }"
-          :transition="{
-            duration: 0.6,
-            delay: 0.5 + index * 0.1
-          }"
-        >
-          <UButton
-            v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
-          />
-        </Motion>
-      </div>
-    </template>
-
-    <UMarquee
-      pause-on-hover
-      class="py-2 -mx-8 sm:-mx-12 lg:-mx-16 [--duration:40s]"
-    >
-      <Motion
-        v-for="(img, index) in page.hero.images"
-        :key="index"
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: index * 0.1
-        }"
-      >
-        <NuxtImg
-          width="234"
-          height="234"
-          class="rounded-lg aspect-square object-cover"
-          :class="index % 2 === 0 ? '-rotate-2' : 'rotate-2'"
-          v-bind="img"
+        <UButton
+          v-for="link in page.hero.links"
+          :key="link.label"
+          v-bind="link"
         />
       </Motion>
-    </UMarquee>
+
+      <Motion
+        v-if="footer?.links?.length"
+        :initial="{ opacity: 0, transform: 'translateY(8px)' }"
+        :animate="{ opacity: 1, transform: 'translateY(0)' }"
+        :transition="{ duration: 0.45, delay: 0.3 }"
+        class="mt-4 flex items-center gap-1"
+      >
+        <UButton
+          v-for="(link, index) in footer.links"
+          :key="index"
+          v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
+        />
+      </Motion>
+    </template>
+
+    <Motion
+      :initial="{ opacity: 0, transform: 'translateY(12px)' }"
+      :animate="{ opacity: 1, transform: 'translateY(0)' }"
+      :transition="{ duration: 0.55, delay: 0.15 }"
+      class="w-full"
+    >
+      <div class="relative mx-auto max-w-md overflow-hidden rounded-lg border border-default bg-elevated/60 shadow-lg shadow-neutral-950/5 backdrop-blur">
+        <img
+          :src="page.hero.image.src"
+          :alt="page.hero.image.alt"
+          width="640"
+          height="480"
+          class="aspect-[4/3] w-full object-cover"
+          loading="eager"
+        >
+
+        <div class="flex items-center justify-between border-b border-default px-4 py-3">
+          <div class="flex items-center gap-2">
+            <span class="size-2.5 rounded-full bg-error" />
+            <span class="size-2.5 rounded-full bg-warning" />
+            <span class="size-2.5 rounded-full bg-success" />
+          </div>
+          <span class="text-xs text-muted">portfolio.vue</span>
+        </div>
+
+        <div class="space-y-3 p-4 text-sm">
+          <div class="flex items-center gap-3 rounded-md bg-default/70 px-3 py-2">
+            <UIcon
+              name="i-lucide-code-2"
+              class="size-4 text-primary"
+            />
+            <span class="text-muted">stack</span>
+            <span class="ml-auto text-highlighted">Laravel + Vue</span>
+          </div>
+          <div class="flex items-center gap-3 rounded-md bg-default/70 px-3 py-2">
+            <UIcon
+              name="i-lucide-database"
+              class="size-4 text-primary"
+            />
+            <span class="text-muted">systems</span>
+            <span class="ml-auto text-highlighted">APIs + MySQL</span>
+          </div>
+          <div class="flex items-center gap-3 rounded-md bg-default/70 px-3 py-2">
+            <UIcon
+              name="i-lucide-sparkles"
+              class="size-4 text-primary"
+            />
+            <span class="text-muted">workflow</span>
+            <span class="ml-auto text-highlighted">AI-assisted</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 px-4 pb-4">
+          <UBadge
+            v-for="highlight in page.hero.highlights"
+            :key="highlight"
+            color="neutral"
+            variant="outline"
+            class="rounded-md"
+          >
+            {{ highlight }}
+          </UBadge>
+        </div>
+      </div>
+    </Motion>
   </UPageHero>
 </template>

@@ -1,0 +1,19 @@
+title: "Shopify Photo Studio Website"
+description: "A Shopify website for a photo studio business, focused on a clean browsing experience, service presentation, and responsive pages that feel simple for customers to use."
+status: "Client-style project"
+role: "Shopify website build"
+icon: "i-lucide-camera"
+image:
+  src: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80"
+  alt: "Camera equipment used for studio photography"
+url: ""
+tags:
+  - "Shopify"
+  - "JavaScript"
+  - "Responsive UI"
+  - "Frontend implementation"
+highlights:
+  - "Structured pages around the studio's services and customer flow."
+  - "Adjusted theme styling and frontend behavior for a polished presentation."
+  - "Focused on readable content, mobile layout, and a professional visual feel."
+date: "Portfolio project"
