@@ -97,8 +97,8 @@ experience:
   description: "A practical path from operations work into building and maintaining business software."
   items:
     - role: "Full-stack Web Developer"
-      company: "Current role"
-      date: "Present"
+      company: "Clever Minds Digital Solutions Inc."
+      date: "Feb 2024 – Present"
       icon: "i-lucide-code-2"
       summary: "Building and maintaining internal web systems with Vue.js, Laravel, PHP, and MySQL."
       points:
@@ -106,8 +106,8 @@ experience:
         - "Integrate APIs, update database behavior, and fix issues found during QA."
         - "Work with internal workflows, API documentation, and day-to-day product fixes needed for release."
     - role: "Insurance Operations"
-      company: "Previous role"
-      date: "Before software development"
+      company: "Accenture"
+      date: "Aug 2022 – Feb 2024"
       icon: "i-lucide-briefcase-business"
       summary: "Worked with operational processes before transitioning into software development."
       points:
